@@ -15,4 +15,18 @@ version="3.0">
     <servlet-name>Test</servlet-name>
     <url-pattern>/bonjour</url-pattern>
   </servlet-mapping>
+  
+  
+    <servlet>
+    <servlet-name>Accueil</servlet-name>
+    <servlet-class>com.octest.servlets.Accueil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Accueil</servlet-name>
+    <url-pattern>/accueil</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
 </web-app>
