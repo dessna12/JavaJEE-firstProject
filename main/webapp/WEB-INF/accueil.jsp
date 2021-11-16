@@ -12,7 +12,9 @@
 	String name = (String) request.getAttribute("name");
 %>
 
-<p> Bienvenue à <% out.println(name); %></p>
+<p> Bienvenue à ${ !empty name ? name : '' } </p>
+<p> ${ noms[0] } </p>
+
 
 <%@ include file="menu.jsp" %>
 

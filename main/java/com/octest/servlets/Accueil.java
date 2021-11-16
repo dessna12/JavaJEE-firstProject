@@ -27,7 +27,9 @@ public class Accueil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name=request.getParameter("name");
+		String [] noms= {"Jean","Paul","Jacques"};
 		request.setAttribute("name", name);
+		request.setAttribute("noms", noms);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);;
 		
 		
