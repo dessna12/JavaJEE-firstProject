@@ -15,8 +15,13 @@
 <p> Bienvenue à ${ !empty name ? name : '' } </p>
 <p> ${ noms[0] } </p>
 
+<p> Bonjour ${ auteur.prenom } ${ auteur.nom } </p>
+<p> ${ !auteur.actif ? "Vous n'êtes pas très actifs" : "Vous êtes actif" } </p>
+
+
+/ ajout d'un header et d'un lien vers autre jsp
 
 <%@ include file="menu.jsp" %>
 
-</body>
+</body>	
 </html>

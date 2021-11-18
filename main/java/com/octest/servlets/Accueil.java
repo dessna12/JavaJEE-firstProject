@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.octest.beans.Auteur;
+
 /**
  * Servlet implementation class Accueil
  */
@@ -26,6 +28,13 @@ public class Accueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Auteur auteur = new Auteur();
+		auteur.setNom("Desse");
+		auteur.setPrenom("Natacha");
+		auteur.setActif(true);
+		request.setAttribute("auteur", auteur);
+		
+		
 		String name=request.getParameter("name");
 		String [] noms= {"Jean","Paul","Jacques"};
 		request.setAttribute("name", name);

@@ -26,9 +26,11 @@
 	%>
 
 
+// ajout d'un header et d'un lien vers autre jsp
 <%@ include file="menu.jsp" %>
 
-
 </p>
+
+
 </body>
 </html>
