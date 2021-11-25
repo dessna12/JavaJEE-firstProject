@@ -35,8 +35,8 @@ public class Accueil extends HttpServlet {
 		request.setAttribute("auteur", auteur);
 		
 		
-		String name=request.getParameter("name");
-		String [] noms= {"Jean","Paul","Jacques"};
+		String name = request.getParameter("name");
+		String [] noms = {"Jean","Paul","Jacques"};
 		request.setAttribute("name", name);
 		request.setAttribute("noms", noms);
 		this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);;
@@ -49,7 +49,8 @@ public class Accueil extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		
 	}
 
 }

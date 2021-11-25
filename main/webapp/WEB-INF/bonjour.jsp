@@ -1,5 +1,4 @@
-
-    
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +28,18 @@
 <%@ include file="menu.jsp" %>
 
 </p>
+
+
+<form method="post" action="bonjour">
+	<label for="nom">Nom : </label>
+	<input type="text" name="nom" id="nom" />
+	
+	<input type="submit" />
+	
+</form>
+
+<c:if test="${ !empty nom }"><p><c:out value="Voici ton nom : ${ nom }" /></p></c:if>
+
 
 
 </body>
