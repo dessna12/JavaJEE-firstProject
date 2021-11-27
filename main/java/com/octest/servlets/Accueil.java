@@ -39,7 +39,7 @@ public class Accueil extends HttpServlet {
 		String [] noms = {"Jean","Paul","Jacques"};
 		request.setAttribute("name", name);
 		request.setAttribute("noms", noms);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);;
+		this.getServletContext().getRequestDispatcher("/WEB-INF/accueil.jsp").forward(request, response);
 		
 		
 	}
