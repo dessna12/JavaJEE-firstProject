@@ -8,6 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.octest.forms.*;
 
 /**
@@ -30,9 +32,6 @@ public class Test extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String heure = "soir";
-		request.setAttribute("heure", heure);
-		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 				
 	}
@@ -43,14 +42,14 @@ public class Test extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		ConnectionForm form = new ConnectionForm();
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");
 		
-		form.verifierIdentifiants(request);
+		HttpSession session = request.getSession();
 		
-		request.setAttribute("form", form);
+		session.setAttribute("prenom", prenom);
+		session.setAttribute("nom", nom);
 		
-		String heure = "soir";
-		request.setAttribute("heure", heure);
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 	}
