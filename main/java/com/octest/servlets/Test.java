@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,6 +47,13 @@ public class Test extends HttpServlet {
 		String prenom = request.getParameter("prenom");
 		
 		HttpSession session = request.getSession();
+		
+		Cookie cookiePrenom = new Cookie("prenom",prenom);
+		Cookie cookieNom = new Cookie("nom",nom);
+		cookiePrenom.setMaxAge(60*60*24);
+		response.addCookie(cookieNom);
+		response.addCookie(cookiePrenom);
+		
 		
 		session.setAttribute("prenom", prenom);
 		session.setAttribute("nom", nom);
